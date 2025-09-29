@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>  
+    <meta charset="utf-8">
+    <title>About us | InnerVerse</title>
+    <meta name="description" content="InnerVerseの会社情報です。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png">
+    
+    <!--  Googlrフォントを使う ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@400&display=swap" rel="stylesheet">
+    <!------------------------------->
+    
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/company.css">
+    
+    <!-- inviewファイルを読み込む前に読み込む  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- スクロール時にコンテンツを下から表示させるプラグイン  -->
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- 「チョークで書く」の音源を読み込む  -->
+    <audio id="chalkSound" src="sounds/chalk.mp3" preload="auto"></audio>
+    <audio id="chalkEndSound" src="sounds/putOn.mp3" preload="auto"></audio>
+    
+  </head>
+
+  <body>
+    <header id="header">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/common/logo.png" alt="Interior Design">
+        </a>
+      </h1>
+
+      <!-- ハンバーガーメニュー  -->
+      <div class="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <span class="menu-text">menu</span>
+        <span class="close-text">close</span>
+      </div>
+
+      <nav class="navi">
+        <ul class="menu">
+        
+          <!-- ドロップダウンのメニュー  -->
+          <li class="menu-first">
+            <span><img src="img/common/menuIcon1.png" class="icon" alt="">InnerVerseについて</span>  <!-- クリックで遷移しないのでspanタグで囲む  -->
+            <ul class="menu-second">
+              <li><a href="company.html#philosophy"><img src="img/common/menuIcon5.png" class="icon" alt="">InnerVerseの想い</a></li>
+              <li><a href="company.html#service"><img src="img/common/menuIcon6.png" class="icon" alt="">ビジネス紹介</a></li>
+              <li><a href="company.html#overview"><img src="img/common/menuIcon7.png" class="icon" alt="">会社概要</a></li>
+              <li><a href="company.html#access"><img src="img/common/menuIcon8.png" class="icon" alt="">アクセス</a></li>
+            </ul>
+          </li>
+          <li><a href="Services.html"><img src="img/common/menuIcon2.png" class="icon" alt=""></i>サービス一覧</a></li>
+          <li><a href="project.html"><img src="img/common/menuIcon3.png" class="icon" alt=""></i>プロジェクト</a></li>
+          <li><a href="faq.html"><img src="img/common/menuIcon4.png" class="icon" alt=""></i>よくある質問</a></li>
+          <li class="menu-contact"><a href="contact.html"></i>お問い合わせ</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mask"></div>  <!-- ハンバーガーメニューを表示した際は背景にマスクを設定する  -->
+    </header>
+    
+    <main>
+      <!-- 下層ページヘッダー -->
+      <div class="page-header">
+        <div class="img">
+          <img src="img/company/mainvisual.jpg" alt="">
+        </div>
+        <div class="page-title-area">
+          <h1 class="page-title">
+            <span class="en">About Us</span>
+            <span class="ja">会社情報</span>
+          </h1>
+        </div>
+      </div>
+      
+      <!-- ページ内リンク  -->
+      <ul class="pagelink-list wrapper">
+        <li><a href="#philosophy">InnerVerseの想い</a></li>
+        <li><a href="#service">ビジネス紹介</a></li>
+        <li><a href="#overview">会社概要</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+      
+      <!-- InnerVerseの想い  -->
+      <section id="philosophy">
+        <img src="img/company/feather.png" alt="装飾画像" class="section-deco">
+        <h2 class="section-title"><span>InnerVerseの想い</span></h2>
+
+        <div class="wrapper">
+          <div class="text-area">
+            <div class="inner">
+              <p class="title">より実感のあるヒーリングへ</p>
+              <p class="text">InnerVerseは、VRテクノロジーを通じて、心と身体に深く触れる癒しの体験を提供します。</p>
+              <p class="text">見る・聞く・嗅ぐ・触れる——五感を超えたアクションが、癒しの実感と効果を高めていきます。</p>
+            </div>
+          </div>
+          <div class="img-top">
+            <img src="img/company/philosophy1.jpg" alt="">
+          </div>
+          <div class="img-bottom">
+            <img src="img/company/philosophy2.jpg" alt="">
+          </div>
+        </div>
+      </section>
+      
+      <section id="service">
+        <img src="img/company/feather.png" alt="装飾画像" class="section-deco">
+        <h2 class="section-title"><span>ビジネス紹介</span></h2>
+
+        <div class="wrapper">
+          <a class="item serv" href="products_1.html">
+            <div class="text">
+              <p class="title-ja">VRヒーリングサービス</p>
+              <p class="title-en">VR Healing Service</p>
+              <p class="description">お客様一人一人に寄り添い、ヴァーチャルリアリティとヒーリングの融合によって心身の深い癒しと回復を促します。</p>
+              <p class="read-more">
+                <span class="text">DISCOVER MORE</span>
+                <!--<span class="circle">
+                    <svg width="16" height="16" viewBox="0 0 24 24">
+                      <path d="M8 5l8 7-8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>-->
+              </p>
+            </div>
+            <div class="img">
+              <img src="img/company/company-service.jpg" alt="">
+            </div>
+          </a>
+
+          <a class="item proj" href="project.html">
+            <div class="text">
+              <p class="title-ja">イベント参加型プロジェクト</p>
+              <p class="title-en">Event participation project</p>
+              <p class="description">様々なイベントの出展を通して、InnerVerseの世界を広めています。</p>
+              <p class="read-more">
+                <span class="text">DISCOVER MORE</span>
+                <!--<span class="circle">
+                    <svg width="16" height="16" viewBox="0 0 24 24">
+                      <path d="M8 5l8 7-8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>-->
+              </p>
+            </div>
+            <div class="img">
+              <img src="img/company/company-project.jpg" alt="">
+            </div>
+          </a>
+        </div>
+
+
+      </section>
+      
+      <section id="overview">
+        <img src="img/company/feather.png" alt="装飾画像" class="section-deco">
+        <h2 class="section-title"><span>会社概要</span></h2>
+
+        <dl class="overview-list wrapper">
+          <dt>会社名</dt>
+          <dd>株式会社InnerVerse</dd>
+          <dt>代表取締役</dt>
+          <dd>佐藤　〇〇〇</dd>
+          <dt>設立</dt>
+          <dd>2025年10月</dd>
+          <dt>所在地</dt>
+          <dd>北海道函館市大町X-XXX</dd>
+          <dt>事業内容</dt>
+          <dd>VR型ヒーリング業</dd>
+        </dl>
+      </section>
+      
+      <section id="access">
+        <img src="img/company/feather.png" alt="装飾画像" class="section-deco">
+        <h2 class="section-title"><span>アクセス</span></h2>
+
+        <div class="info wrapper">
+          <p>〒040-0052 北海道函館市大町X-XXX<br>TEL 0138-27-XXXX / FAX  0138-27-XXXX</p>
+          <a href="https://www.google.com/maps/@41.7692696,140.7184843,16z?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map</a>
+          
+        </div>
+        
+        <div class="map-and-cards">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5951.479402790791!2d140.71848434289066!3d41.76926963501521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1756253443044!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <div class="side-cards">
+            <div class="card" data-pin="pin1">🌙 InnerVerseの場所は…</div>
+            <div class="card" data-pin="pin2">🌿 道に迷ったときは…</div>
+            <div class="card" data-pin="pin3">🕊️ この看板を…</div>
+            <div id="messageBoard"  class="message-board">
+              <div class="img">
+                 <img src="img/company/messageBoard.png" alt="">
+              </div>
+              <div id="infoBox" style="display:none;">
+                <p>InnerVerseの建物は金森レンガ倉庫から徒歩５分程の海の近くにあります。</p>
+              </div>
+              <div id="signBoard" style="display:none;">
+                <img src="img/company/signboard.png" alt="看板"><p class="caption">我が社の看板</p>
+              </div>
+            </div>
+
+
+         </div>
+
+         
+      </section>
+
+    </main>
+
+  
+  <!-- フッター  -->
+    <footer id="footer">
+      <div class="info-area">
+        <a class="logo" href="index.html">
+          <img src="img/common/logo-w.png" alt="InnerVerse">
+        </a>
+        <div class="info">
+          <p>〒040-0052<br>北海道函館市大町X-XXX</p>
+          <p>TEL: 0138-27-XXXX</p>
+        </div>
+        <p class="copyright">Copyright © InnerVerse. All rights reserved.</p>
+      </div>
+
+      <div class="menu-area">
+        <div class="menu-col">
+          <p class="menu-title"><a href="company.html">会社情報</a></p>
+          <ul class="menu-list">
+            <li><a href="company.html#philosophy">InnerVerseの想い</a></li>
+            <li><a href="company.html#service">ビジネス紹介</a></li>
+            <li><a href="company.html#overview">会社概要</a></li>
+            <li><a href="company.html#access">アクセス</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-col">
+          <p class="menu-title"><a href="products_1.html">サービス一覧</a></p>
+          <p class="menu-title"><a href="project.html">プロジェクト</a></p>
+        </div>
+        
+        <div class="menu-col">
+          <p class="menu-title"><a href="faq.html">よくある質問</a></p>
+          <p class="menu-title"><a href="contact.html">お問い合わせ</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html> 

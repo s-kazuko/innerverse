@@ -1,0 +1,634 @@
+@charset "UTF-8";
+
+/* セクションタイトル */
+.section-title {
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-family: 'Cormorant Garamond', serif;
+  text-transform: none;                                    /* 大文字化を避ける                        */
+  background: linear-gradient(90deg, #999, #333, #999);    /* 横向き90度のグラデーション              */
+  background-size: 200% auto;                              /* 背景を２倍にして、流れに見せる          */
+  -webkit-background-clip: text;                           /* 背景を文字の形に切り取る                */
+  -webkit-text-fill-color: transparent;                    /* 文字の色を透明にして背景が透けるように  */
+  animation: shimmer 3s ease-in-out infinite;              /* 3秒かけてゆるやかに繰り返す             */
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }                 /* 背景の位置を右端から左端へと動かす      */
+  100% { background-position: 0% center; }
+}
+/* トップページ共通ボタン */
+.btn {
+  max-width: 120px;
+  background-color: #fff;
+  background: linear-gradient(135deg, #c2e0f4, #e6f0fa);
+  display: block;
+  border: solid 1px #1f1f1f;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight : bold;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;   /* 位置を親にする                         */
+  z-index: 10;          /* 最前面にする                           */
+  overflow:hidden;      /* アニメーションの前に角が見えるのを防ぐ */
+}
+/* ボタンオーバーアウトの時 */
+.btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  z-index: -10;                                                /* ボタンの裏側           */
+  background: linear-gradient(135deg, #b8b5ff, #dcd6f7);       /* 背景色を濃く           */
+  transform-origin: 100% 50%;                                  /* 右端が起点             */
+  transform: scaleX(0);                                        /* 最初は縮小させておく   */
+  transition: transform ease 0.3s;                             /* 0.3秒で変化する        */
+}
+/* ボタンマウスオーバー時 */
+.btn:hover {
+  color: #fff;                                                 /* 文字色を白             */
+  opacity: 1;                        
+}
+/* ボタンマウスオーバー時 */
+.btn:hover::before {
+  transform-origin: 0% 50%;          /* 左端が起点              */
+  transform: scaleX(1);              /* 拡大させる              */
+}
+
+/* Inview */
+/* 画面上に表示される前の状態 */
+.fadein {     
+  opacity: 0;                       /*  非表示                  */
+  transform: translateY(80px);      /*  すこし下に下げる        */
+  transition: all 1s;               /*  1秒かけて変化           */
+}
+/* 画面上に表示された後の処理 */
+.fadein.inview { /* 「inview」というクラスをjsで追加 */
+  opacity: 1;                      /*   表示                    */
+  transform: translateY(0);        /*   上に上がる              */
+}
+/*-------------------------------------------
+ メイン画像
+-------------------------------------------*/
+.mainvisual {
+  height: 600px;
+  margin-bottom: 120px;
+  position: relative;
+}
+.mainvisual .fade-img img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.mainvisual .fade-img li {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+/* アニメーションの開始のタイミング */
+.mainvisual .fade-img li:nth-child(1) {
+  animation-delay: 0s;
+}
+/* アニメーションの開始のタイミング */
+.mainvisual .fade-img li:nth-child(2) {
+  animation-delay: 5s;
+}
+/* アニメーションの開始のタイミング */
+.mainvisual .fade-img li:nth-child(3) {
+  animation-delay: 10s;
+}
+/* キーフレーム fade (animation: fade 15s infinite;)*/
+@keyframes fade {
+  0% {/* 0秒 */
+    opacity: 0;
+  }
+  15% {/* 2.25秒 */
+    opacity: 1;
+  }
+  30% {/* 4.5秒 */
+    opacity: 1;
+  }
+  45% {/* 6.75秒 */
+    opacity: 0;
+  }
+  100% {/* 15秒 */
+    opacity: 0;
+  }
+}
+/* メイン画像のテキスト */
+.mainvisual .catchphrase {
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 30px;
+  color : white;
+  text-shadow: 1px 1px 3px #000;   /* 黒い影をつける               */
+  position: absolute;              /* 親要素（メイン画像）に依存   */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+/*-------------------------------------------
+ 会社情報
+-------------------------------------------*/
+.company {
+  margin-bottom: 120px;
+}
+.company .section-title {
+  margin: 0 0 -5vw 4vw;            /* タイトルを画像の上に重なるように配置 */
+  position: relative;              /* 位置を親にする                       */
+  z-index: 10;                     /* 最前面にする                         */
+}
+.company .flex {
+  display: flex;
+  align-items: center;
+}
+/* 会社の画像 */
+.company .flex .img {
+  width: 65%;
+}
+
+.company .flex .img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+/* 会社情報の説明  */
+.company .flex .text {
+  width: 40%;
+  background-color: #fff;
+  padding: 5% 0 5% 5%;
+  margin-left: -8%;                            /* 画像に重なるように配置 */
+  background-color: rgba(255, 255, 255, 0.85); /* 少し透け感を出す */
+  backdrop-filter: blur(6px);                  /* 背景にぼかし効果を追加 */
+  border-radius: 12px;                         /* 角をやわらかく丸める */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);  /* 優しい影をつける */
+}
+.company .text .title {
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.company .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  margin-right: 40px;
+}
+/*-------------------------------------------
+ サービス
+-------------------------------------------*/
+.services {
+  margin-bottom: 120px;
+  position: relative;
+}
+/* テキストエリアの背景 */
+.services::after {
+  content: "";
+  width: 70%;
+  height: 350px;
+  background-color: #fafafa;
+  display: block;
+  position: absolute;          /* 親の位置に依存                 */
+  top: 6vw;                    /* トップ位置をvwでずれるのを防止 */
+  right: 0;                    /* 右寄せ                         */
+  z-index: -10;                /* 最背面                         */
+}
+/* テキストエリア */
+.services .text {
+  width: 70%;                  /* 可変にする                     */
+  padding: 0 5%;               /* 可変にする                     */
+  margin-left: auto;           /* 右寄せ                         */
+}
+.services .text .section-title {
+  margin-bottom: 30px;
+}
+.services .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+/* 2つの画像リスト */
+.services .services-list-area {
+  display: flex;
+  margin-bottom: 40px;
+  overflow-x: hidden;       /* 画面からはみ出た部分を隠す */
+  padding-bottom: 50px;     /* ずれ分を確保 */
+
+}
+/* CSSアニメーションの設定 */
+.services .services-list-area .services-list {
+  display: flex;
+  animation: slide-left 60s infinite ease-in-out; /* 速度に緩急をつける */
+}
+.services .services-list-area .services-list li {
+  width: calc(100vw / 3);
+}
+.services .services-list-area .services-list li img {
+  width: 95%;
+  border-radius: 50%;
+}
+.services-list li img {
+  transition: transform 0.6s ease; /* 触れた瞬間に少し浮かび上がる */
+}
+.services-list li:hover img {
+  transform: scale(1.05) translateY(0px);
+}
+.services-list li:nth-child(even) {
+  transform: translateY(50px); 
+}
+
+
+
+/* 横に流れるキーフレーム */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);       /* X軸が0        */
+  }
+  100% {
+    transform: translateX(-100%);   /* X軸は左側-100 */
+  }
+}
+.services .btn {
+  margin: 0 auto;
+}
+/*-------------------------------------------
+ ☆のバーテーション
+-------------------------------------------*/
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particles span {
+  position: absolute;
+  font-size: 16px;
+  color: #FFD700;        /* ゴールド系の黄色 */
+  animation: float 12s infinite ease-in-out;
+}
+
+.particles span::before {
+  content: "★";         /* Unicodeの星 */
+}
+
+.particles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.particles span:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+}
+.particles span:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+}
+.particles span:nth-child(4) {
+  left: 70%;
+  animation-delay: 6s;
+}
+.particles span:nth-child(5) {
+  left: 90%;
+  animation-delay: 8s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+}
+/*-------------------------------------------
+ プロジェクト
+-------------------------------------------*/
+.project {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+  position: relative;
+}
+/* 背景を疑似要素で作成 */
+.project::after {
+  content: "";
+  width: 70%;
+  height: 70%;
+  min-height: 420px;
+  background-color: #fafafa;
+  display: block;
+  position: absolute;      /* 親に依存する位置 */
+  top: 6vw;
+  left: 0;
+  z-index: -10;
+}
+.project .text {
+  padding: 0 6% 0 4%;
+}
+.project .text .section-title {
+  margin-bottom: 40px;
+}
+.project .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.project .text .btn {
+  margin-top: 30px;
+}
+/* 画像リスト */
+.project .project-list {
+  max-width: 1000px;
+  display: grid;                            
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 170px;
+}
+.project .project-list li {
+  max-width: 500px;
+  padding: 10px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /*  要素に高さを指定（画像＋キャプション分）*/
+  display: flex;                 
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+}
+
+.project .project-list li img {
+  height: 200px;     /* 画像に高さを指定*/
+  object-fit: cover; /* トリミング      */
+  width: 100%;
+  display: block;
+}
+
+.project .project-list li .caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Yu Mincho', serif;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  min-height: 24px; /* キャプションが短くても高さを確保 */
+}
+
+/*-------------------------------------------
+Faq と Contactを交差させる
+-------------------------------------------*/
+
+.faq-contact-grid .item .title {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+  color: black;
+}
+.faq-contact-grid .item .title .en {
+  display: block;
+  font-size: 4vw;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.faq-contact-grid  .item .title .ja {
+  display: block;
+  font-size: 14px;
+}
+/* 矢印の画像 */
+.faq-contact-grid .item .arrow {
+  width: clamp(85px, 10vw, 140px); /* 画面幅に応じてサイズが可変になるように設定 */
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  filter: invert(100%);
+}
+
+/* 矢印を鼓動のアニメーションをさせる */
+.faq-contact-grid  .item .arrow img {
+  width: 100%;
+  animation: heartbeat 1s infinite;
+  transform-origin: center;
+}
+
+/* 鼓動アニメーション */
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.1); }
+  50%  { transform: scale(1); }
+  75%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.faq-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  padding: 0 5% 80px;
+}
+/* 各ブロックの基本スタイル */
+.faq-contact-grid .item {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+/* FAQを少し右下にずらす */
+.faq-contact-grid .faq {
+  grid-column: 1;
+  grid-row: 1;
+  transform: translate(0px, 100px);
+  z-index: 2;
+}
+
+/* CONTACTを少し左上にずらす（重なり感） */
+.faq-contact-grid .contact {
+  grid-column: 2;
+  grid-row: 2;
+  transform: translate(0px, -100px);
+  z-index: 3;
+}
+/* エアメール風の枠を作る */
+.airmail-frame {
+  position: relative;
+  background: #F7F6F4;
+  padding: 1px;
+  border: 12px solid transparent;
+  border-image: repeating-linear-gradient(
+    45deg,
+    #EB6548 0 10px,
+    #F7F6F4 10px 20px,
+    #0290D8 20px 30px,
+    #F7F6F4 30px 40px
+  ) 12;
+}
+
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  .section-title {
+    font-size: 12vw;
+  }
+
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+  .mainvisual {
+    height: 400px;
+    margin-bottom: 60px;
+  }
+  .mainvisual .fade-img img {
+    height: 400px;
+  }
+  .mainvisual .fade-img li {
+    width: 100%;
+  }
+  .mainvisual .catchphrase {
+    color: #fff;
+    text-shadow: 1px 1px 1px #777;
+    font-size: 20px;
+
+  }
+  
+    /*-------------------------------------------
+  Company
+  -------------------------------------------*/
+  .company {
+    margin-bottom: 60px;
+  }
+  .company .section-title {
+    margin: 0 0 -7vw;
+    text-align: center;
+  }
+  .company .flex {
+    flex-direction: column;
+  }
+  .company .flex .img {
+    width: 100%;
+  }
+  .company .flex .img img {
+    height: 300px;
+  }
+  .company .flex .text {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 20px 0;
+  }
+  .company .flex .text .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .company .flex .text .description {
+    margin-bottom: 20px;
+  }
+
+  /*-------------------------------------------
+  Products
+  -------------------------------------------*/
+  .services {
+    margin-bottom: 60px;
+  }
+  .services::after {
+    width: 100%;
+    height: 250px;
+    top: 10vw;
+  }
+  .services .text {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .services .text .section-title {
+    text-align: center;
+  }
+  .services .text .description {
+    margin-bottom: 20px;
+  }
+  .services .services-list-area {
+    margin-bottom: 20px;
+  }
+  
+  /*-------------------------------------------
+  プロジェクト
+  -------------------------------------------*/
+  .project {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+  .project::after {
+    width: 100%;
+    height: 90%;
+    min-height: auto;
+    top: 10vw;
+  }
+  .project .text {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+  .project .text .section-title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  /* 画像リスト */
+  .project .project-list {
+    margin-top: 0;
+    display: grid;                            /* グリッド表示 */
+    grid-template-columns: repeat(2, 1fr);    /* ２列表示     */
+    gap: 5px;                                 /* 余白５px     */
+  }
+  /*-------------------------------------------
+  Faq & Contact
+  -------------------------------------------*/
+  
+  .faq-contact-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 5% 0 ;
+    gap: 0px;
+
+  }
+  .faq-contact-grid .item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .faq-contact-grid .item .title .en {
+    font-size: 8vw;
+  }
+  
+  /* FAQ*/
+  .faq-contact-grid .faq {
+    transform: translate(0px, 0px);
+  }
+
+  /* CONTACT */
+  .faq-contact-grid .contact {
+    transform: translate(0px, -50px);
+  }
+
+}

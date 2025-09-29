@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+
+/*-------------------------------------------
+  フッター
+-------------------------------------------*/
+#footer {
+  display: flex;                           /*  横並び                     */
+  justify-content: space-between;          /*  2列を両端に配置            */
+  padding: 80px 5%;                        /*  画面幅に応じて余白を設定   */
+  background-position: center;
+  opacity: 0.95; /* 全体に少し透け感を */
+  footer {
+  background-image: url("img/common/footer-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#footer a {
+  color: #fff;
+}
+/*   会社情報エリア   */
+#footer .info-area {
+  width: 35%;                             
+}
+#footer .info-area .logo {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  line-height: 0;
+  margin-bottom: 30px;
+}
+#footer .info-area .info {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+#footer .info-area .copyright {
+  font-size: 10px;
+}
+/*  メニューエリア    */
+#footer .menu-area {
+  width: 65%;                            /* 右端に6.5割の幅を持たせる */
+  display: flex;
+  justify-content: flex-end;             /* 右寄せ                    */
+}
+#footer .menu-area .menu-col {
+  width: 100%;
+  max-width: 150px;
+}
+#footer .menu-area .menu-col .menu-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+#footer .menu-area .menu-col .menu-list li {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+/* 疑似要素でサブメニューの先頭に"-"をつける   */
+#footer .menu-area .menu-col .menu-list li::before {
+  content: "-";
+  margin-right: 10px;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+
+  /*-------------------------------------------
+  フッター
+  -------------------------------------------*/
+  #footer {
+  /* 会社情報とメニューエリアの位置を入れ替える */
+    flex-direction: column-reverse;
+    padding: 60px 20px;
+  }
+  #footer .info-area {
+    width: 100%;
+  }
+  /* メニューエリア */
+  #footer .menu-area {
+    width: 100%;                 /* 全幅               */
+    justify-content: center;     /* 中央寄せ           */
+    margin-bottom: 40px;
+  }
+  #footer .info-area {
+    text-align: center;
+  }
+  #footer .info-area .logo {
+    margin: 0 auto 30px;
+  }
+}

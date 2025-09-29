@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>  
+    <meta charset="utf-8">
+    <title>Services | InnerVerse</title>
+    <meta name="description" content="InnerVerseのサービス情報です。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png">
+    
+    <!--  Googlrフォントを使う ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@400&display=swap" rel="stylesheet">
+    <!------------------------------->
+    
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+    
+    <!-- inviewファイルを読み込む前に読み込む  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+  
+   <header id="header">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/common/logo.png" alt="Interior Design">
+        </a>
+      </h1>
+
+      <!-- ハンバーガーメニュー  -->
+      <div class="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <span class="menu-text">menu</span>
+        <span class="close-text">close</span>
+      </div>
+
+      <nav class="navi">
+        <ul class="menu">
+        
+          <!-- ドロップダウンのメニュー  -->
+          <li class="menu-first">
+            <span><img src="img/common/menuIcon1.png" class="icon" alt="">InnerVerseについて</span>  <!-- クリックで遷移しないのでspanタグで囲む  -->
+            <ul class="menu-second">
+              <li><a href="company.html#philosophy"><img src="img/common/menuIcon5.png" class="icon" alt="">InnerVerseの想い</a></li>
+              <li><a href="company.html#service"><img src="img/common/menuIcon6.png" class="icon" alt="">ビジネス紹介</a></li>
+              <li><a href="company.html#overview"><img src="img/common/menuIcon7.png" class="icon" alt="">会社概要</a></li>
+              <li><a href="company.html#access"><img src="img/common/menuIcon8.png" class="icon" alt="">アクセス</a></li>
+            </ul>
+          </li>
+          <li><a href="Services.html"><img src="img/common/menuIcon2.png" class="icon" alt=""></i>サービス一覧</a></li>
+          <li><a href="project.html"><img src="img/common/menuIcon3.png" class="icon" alt=""></i>プロジェクト</a></li>
+          <li><a href="faq.html"><img src="img/common/menuIcon4.png" class="icon" alt=""></i>よくある質問</a></li>
+          <li class="menu-contact"><a href="contact.html"></i>お問い合わせ</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mask"></div>  <!-- ハンバーガーメニューを表示した際は背景にマスクを設定する  -->
+    </header>
+    
+    <main>
+      <div class="page-header">
+        <div class="img">
+          <img src="img/services/mainvisual.jpg" alt="">
+        </div>
+        <div class="page-title-area">
+          <h1 class="page-title">
+            <span class="en">Services</span>
+            <span class="ja">サービス一覧</span>
+          </h1>
+        </div>
+      </div>
+      
+      <!-- サービス一覧のタブ -->
+      <ul class="tab-list">
+        <li class="tab-all">全て</li>
+        <li class="tab-space">空間</li>
+        <li class="tab-aroma">香り</li>
+        <li class="tab-sound">響き</li>
+        <li class="tab-touch">タッチ</li>
+      </ul>
+
+      <!-- サービス一覧 -->
+      <ul class="products-list all">
+        <li>
+          <img src="img/services/space1.jpg" alt="">
+          <div class="info">
+            <p class="name">水の中を体験</p>
+            <p class="price">（30分）&yen;4,750</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space2.jpg" alt="">
+          <div class="info">
+            <p class="name">人と対面</p>
+            <p class="price">（45分）&yen;11,000</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space3.jpg" alt="">
+          <div class="info">
+            <p class="name">故人と対面</p>
+            <p class="price">（60分）&yen;12,750</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space4.jpg" alt="">
+          <div class="info">
+            <p class="name">宇宙空間を体験</p>
+            <p class="price">（30分）&yen;4,750</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma1.jpg" alt="">
+          <div class="info">
+            <p class="name">ハーブの香りを体験</p>
+            <p class="price">（オプション）&yen;2,550～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma2.jpg" alt="">
+          <div class="info">
+            <p class="name">海の香りを体験</p>
+            <p class="price">（オプション）&yen;1,200～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma3.jpg" alt="">
+          <div class="info">
+            <p class="name">果実の香りを体験</p>
+            <p class="price">（オプション）&yen;2,750～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma4.jpg" alt="">
+          <div class="info">
+            <p class="name">花の香を体験</p>
+            <p class="price">（オプション）&yen;1,000～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound1.jpg" alt="">
+          <div class="info">
+            <p class="name">鳥の鳴き声を聴く</p>
+            <p class="price">（オプション）無料</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound2.jpg" alt="">
+          <div class="info">
+            <p class="name">海の音を聴く</p>
+            <p class="price">（オプション）無料</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound3.jpg" alt="">
+          <div class="info">
+            <p class="name">大聖堂の演奏を聴く</p>
+            <p class="price">（プログラム料金）&yen;5,000</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound4.jpg" alt="">
+          <div class="info">
+            <p class="name">イルカの鳴き声を聴く</p>
+            <p class="price">（プログラム料金）&yen;8,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch1.jpg" alt="">
+          <div class="info">
+            <p class="name">ファントム・タッチ</p>
+            <p class="price">（プログラム料金）&yen;12,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch2.jpg" alt="">
+          <div class="info">
+            <p class="name">ハンド・タッチ</p>
+            <p class="price">（プログラム料金）&yen;8,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch3.jpg" alt="">
+          <div class="info">
+            <p class="name">ストーン・タッチ</p>
+            <p class="price">（プログラム料金）&yen;7,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch4.jpg" alt="">
+          <div class="info">
+            <p class="name">フィール・ウィンド</p>
+            <p class="price">（プログラム料金）&yen;3,000</p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="products-list space">
+        <li>
+          <img src="img/services/space1.jpg" alt="">
+          <div class="info">
+            <p class="name">水の中を体験</p>
+            <p class="price">（30分）&yen;4,750</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space2.jpg" alt="">
+          <div class="info">
+            <p class="name">人と対面</p>
+            <p class="price">（45分）&yen;11,000</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space3.jpg" alt="">
+          <div class="info">
+            <p class="name">故人と対面</p>
+            <p class="price">（60分）&yen;12,750</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/space4.jpg" alt="">
+          <div class="info">
+            <p class="name">宇宙空間を体験</p>
+            <p class="price">（30分）&yen;4,750</p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="products-list aroma">
+        <li>
+          <img src="img/services/aroma1.jpg" alt="">
+          <div class="info">
+            <p class="name">ハーブの香りを体験</p>
+            <p class="price">（オプション）&yen;2,550～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma2.jpg" alt="">
+          <div class="info">
+            <p class="name">海の香りを体験</p>
+            <p class="price">（オプション）&yen;1,200～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma3.jpg" alt="">
+          <div class="info">
+            <p class="name">果実の香りを体験</p>
+            <p class="price">（オプション）&yen;2,750～</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/aroma4.jpg" alt="">
+          <div class="info">
+            <p class="name">花の香を体験</p>
+            <p class="price">（オプション）&yen;1,000～</p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="products-list sound">
+        <li>
+          <img src="img/services/sound1.jpg" alt="">
+          <div class="info">
+            <p class="name">鳥の鳴き声を聴く</p>
+            <p class="price">（オプション）無料</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound2.jpg" alt="">
+          <div class="info">
+            <p class="name">海の音を聴く</p>
+            <p class="price">（オプション）無料</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound3.jpg" alt="">
+          <div class="info">
+            <p class="name">大聖堂の演奏を聴く</p>
+            <p class="price">（プログラム料金）&yen;5,000</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/sound4.jpg" alt="">
+          <div class="info">
+            <p class="name">イルカの鳴き声を聴く</p>
+            <p class="price">（プログラム料金）&yen;8,500</p>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="products-list touch">
+        <li>
+          <img src="img/services/touch1.jpg" alt="">
+          <div class="info">
+            <p class="name">ファントム・タッチ</p>
+            <p class="price">（プログラム料金）&yen;12,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch2.jpg" alt="">
+          <div class="info">
+            <p class="name">ハンド・タッチ</p>
+            <p class="price">（プログラム料金）&yen;8,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch3.jpg" alt="">
+          <div class="info">
+            <p class="name">ストーン・タッチ</p>
+            <p class="price">（プログラム料金）&yen;7,500</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/services/touch4.jpg" alt="">
+          <div class="info">
+            <p class="name">フィール・ウィンド</p>
+            <p class="price">（プログラム料金）&yen;3,000</p>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="copyright-notice">
+        <p>※本ページの一部ビジュアルは、CanvaのAI生成機能を活用し、現実では捉えられない幻想的な情景を描いています。</p>
+      </div>
+
+    
+    </main>
+    <!-- フッター  -->
+    <footer id="footer">
+      <div class="info-area">
+        <a class="logo" href="index.html">
+          <img src="img/common/logo-w.png" alt="InnerVerse">
+        </a>
+        <div class="info">
+          <p>〒040-0052<br>北海道函館市大町X-XXX</p>
+          <p>TEL: 0138-27-XXXX</p>
+        </div>
+        <p class="copyright">Copyright © InnerVerse. All rights reserved.</p>
+      </div>
+
+      <div class="menu-area">
+        <div class="menu-col">
+          <p class="menu-title"><a href="company.html">会社情報</a></p>
+          <ul class="menu-list">
+            <li><a href="company.html#philosophy">InnerVerseの想い</a></li>
+            <li><a href="company.html#service">ビジネス紹介</a></li>
+            <li><a href="company.html#overview">会社概要</a></li>
+            <li><a href="company.html#access">アクセス</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-col">
+          <p class="menu-title"><a href="products_1.html">サービス一覧</a></p>
+          <p class="menu-title"><a href="project.html">プロジェクト</a></p>
+        </div>
+        
+        <div class="menu-col">
+          <p class="menu-title"><a href="faq.html">よくある質問</a></p>
+          <p class="menu-title"><a href="contact.html">お問い合わせ</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

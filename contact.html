@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>  
+    <meta charset="utf-8">
+    <title>Contact | InnerVerse</title>
+    <meta name="description" content="InnerVerseのお問合せページです。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png">
+    
+    <!--  Googlrフォントを使う ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@400&display=swap" rel="stylesheet">
+    <!------------------------------->
+    
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- inviewファイルを読み込む前に読み込む  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+  
+   <header id="header">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="img/common/logo.png" alt="Interior Design">
+        </a>
+      </h1>
+
+      <!-- ハンバーガーメニュー  -->     
+      <div class="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <span class="menu-text">menu</span>
+        <span class="close-text">close</span>
+      </div>
+
+
+      <nav class="navi">
+        <ul class="menu">
+        
+          <!-- ドロップダウンのメニュー  -->
+          <li class="menu-first">
+            <span><img src="img/common/menuIcon1.png" class="icon" alt="">InnerVerseについて</span>  <!-- クリックで遷移しないのでspanタグで囲む  -->
+            <ul class="menu-second">
+              <li><a href="company.html#philosophy"><img src="img/common/menuIcon5.png" class="icon" alt="">InnerVerseの想い</a></li>
+              <li><a href="company.html#service"><img src="img/common/menuIcon6.png" class="icon" alt="">ビジネス紹介</a></li>
+              <li><a href="company.html#overview"><img src="img/common/menuIcon7.png" class="icon" alt="">会社概要</a></li>
+              <li><a href="company.html#access"><img src="img/common/menuIcon8.png" class="icon" alt="">アクセス</a></li>
+            </ul>
+          </li>
+          <li><a href="Services.html"><img src="img/common/menuIcon2.png" class="icon" alt=""></i>サービス一覧</a></li>
+          <li><a href="project.html"><img src="img/common/menuIcon3.png" class="icon" alt=""></i>プロジェクト</a></li>
+          <li><a href="faq.html"><img src="img/common/menuIcon4.png" class="icon" alt=""></i>よくある質問</a></li>
+          <li class="menu-contact"><a href="contact.html"></i>お問い合わせ</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mask"></div>  <!-- ハンバーガーメニューを表示した際は背景にマスクを設定する  -->
+    </header>
+    
+    <main>
+      <div class="page-header">
+        <div class="img">
+          <img src="img/contact/mainvisual.jpg" alt="">
+        </div>
+        <div class="page-title-area">
+          <h1 class="page-title">
+            <span class="en">Contact</span>
+            <span class="ja">お問合わせ</span>
+          </h1>
+        </div>
+      </div>
+      
+      <p class="head-text">ご不明点やご質問などございましたら、<br class="pc">下記のフォームからお気軽にお問い合わせください。</p>
+
+      <div class="form-area">
+        <p class="form-title">お問い合わせフォーム</p>
+        <form action="https://formspree.io/f/xanpnezy" method="post">
+          <dl>
+            <!-- ラベルと入力欄のグループクラス  -->
+            <div class="item">
+              <dt><label for="kind">お問い合わせ種別</label><span class="require">必須項目</span></dt> <!-- 必須マーククラス -->
+              <dd>
+                <select name="kind" id="kind">
+                  <option value="">クリックして選択してください</option>
+                  <option value="ヴァーチャルリアリティ体験について">ヴァーチャルリアリティ体験について</option>
+                  <option value="料金や体験時間について">料金や体験時間について</option>
+                  <option value="プロジェクト（イベント）について">プロジェクト（イベント）について</option>
+                  <option value="心身への影響について">心身への影響について</option>
+                  <option value="その他">その他</option>
+                </select>
+              </dd>
+            </div>
+            <div class="item">
+              <dt><label for="kind">お名前</label><span class="require">必須項目</span></dt>
+              <!-- placeholderで入力例を入れておく  -->
+              <dd><input id="name" type="text" name="name" placeholder="仮想　太郎"></dd>
+            </div>
+            <div class="item">
+              <dt><label for="mail">メールアドレス</label><span class="require">必須項目</span></dt>
+              <dd><input id="mail" type="email" name="mail" placeholder="xxxxxxxx@xxx.xxxx"></dd>
+            </div>
+            <div class="item">
+              <dt>どこでお知りになりましたか？</dt>
+              <dd class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" name="know[]" id="know-1" value="SNS">
+                  <label for="know-1">Instagram / X（旧Twitter）などSNS</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" name="know[]" id="know-2" value="Google検索">
+                  <label for="know-2">Google検索</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" name="know[]" id="know-3" value="紹介・口コミ">
+                  <label for="know-3">紹介・口コミ</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" name="know[]" id="know-4" value="その他">
+                  <label for="know-4">その他</label>
+                </div>
+              </dd>
+            </div>
+            <div class="item">
+              <dt><label for="message">お問い合わせ内容</label><span class="require">必須項目</span></dt>
+              <dd><textarea id="message" cols="40" rows="8" name="message"></textarea></dd>
+            </div>
+          </dl>
+
+          <div class="privacy-policy">
+            <div class="privacy-text">
+              <p class="privacy-title">個人情報の取り扱いについて</p>
+              <p>InnerVerseでは、お問い合わせを通じてお預かりするお名前・メールアドレスなどの個人情報を、厳重に管理し、以下の目的以外には使用いたしません。</p>
+              <ol>
+                <li>• 	ご質問へのご返信</li>
+                <li>• 	サービスに関するご案内</li>
+                <li>• 	ご希望に応じた体験のご提供</li>
+                <li>個人情報は、第三者に提供・開示することはございません（法令に基づく場合を除きます）。また、ご本人のご希望により、情報の訂正・削除も承ります。</li>
+                <li>心と身体が安心できる空間づくりのために、誠実に対応させていただきます。</li>
+              </ol>
+            </div>
+            <div class="privacy-item">
+              <input type="checkbox" name="privacy" id="privacy" value="">
+              <label for="privacy">個人情報の取り扱いに同意する</label>
+            </div>
+          </div>
+
+          <input class="btn-submit" type="submit" name="send" value="送信">
+        </form>
+      </div>
+      
+    </main>
+    <!-- フッター  -->
+    <footer id="footer">
+      <div class="info-area">
+        <a class="logo" href="index.html">
+          <img src="img/common/logo-w.png" alt="InnerVerse">
+        </a>
+        <div class="info">
+          <p>〒040-0052<br>北海道函館市大町X-XXX</p>
+          <p>TEL: 0138-27-XXXX</p>
+        </div>
+        <p class="copyright">Copyright © InnerVerse. All rights reserved.</p>
+      </div>
+
+      <div class="menu-area">
+        <div class="menu-col">
+          <p class="menu-title"><a href="company.html">会社情報</a></p>
+          <ul class="menu-list">
+            <li><a href="company.html#philosophy">InnerVerseの想い</a></li>
+            <li><a href="company.html#service">ビジネス紹介</a></li>
+            <li><a href="company.html#overview">会社概要</a></li>
+            <li><a href="company.html#access">アクセス</a></li>
+          </ul>
+        </div>
+
+        <div class="menu-col">
+          <p class="menu-title"><a href="products_1.html">サービス一覧</a></p>
+          <p class="menu-title"><a href="project.html">プロジェクト</a></p>
+        </div>
+        
+        <div class="menu-col">
+          <p class="menu-title"><a href="faq.html">よくある質問</a></p>
+          <p class="menu-title"><a href="contact.html">お問い合わせ</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

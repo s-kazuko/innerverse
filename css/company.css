@@ -1,0 +1,515 @@
+@charset "UTF-8";
+
+.wrapper {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* セクションタイトル */
+.section-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+/* 文字の設定 */
+.section-title span {
+  max-width: 1000px;  /* コンテンツの横幅を揃えるため設定 */
+  display: block;
+  padding: 20px 20px;
+  margin: 0 auto;
+}
+/* 装飾画像 */
+.section-deco {
+  width: calc((100% - 1000px) / 2);
+  height: auto;
+  position: absolute;
+  top: 0px;          
+  left: 40px;          
+}
+
+
+/*-------------------------------------------
+メニュー
+-------------------------------------------*/
+.pagelink-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 80px;
+  padding: 0;
+  background: #f8f5f2; /* 柔らかい背景色 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ページリンク リスト */
+.pagelink-list li {
+  width: calc(100% / 4);              /* 各幅は全幅を４等分する */
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  flex: 1;
+  list-style: none;
+  padding: 16px 0;
+  transition: background 0.3s ease;
+}
+
+.pagelink-list li:hover {
+  background: #C6CAEC;               /* ホバーでふんわり色が変わる */
+}
+
+/* 疑似要素で下のドットを作る */
+.pagelink-list li::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #a89f94;                /* やさしい色のドット     */
+  border-radius: 50%;
+}
+
+.pagelink-list li a {
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  letter-spacing: 0.5px;
+}
+/* 星屑 */
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fff, #dcd6ff);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: twinkle 1s ease-out forwards;
+}
+/* 星屑が現れて消えるアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.5);
+  }
+}
+/*-------------------------------------------
+ 企業理念
+-------------------------------------------*/
+#philosophy {
+  margin-bottom: 120px;
+  overflow: hidden;         /* 横スクロールが出ないようにする */
+  position: relative;
+}
+/* 上の画像 */
+#philosophy .img-top {
+  width: clamp(390px, 50vw, 460px);      /*    幅の最小値と50％の可変と最大値を設定    */
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+/* 見出しテキスト */
+#philosophy .text-area {
+  width: 70%;                  /* 幅を可変にする   */
+  background-color: #fafafa;
+  padding: 7% 0 10% 6%;        /* 余白を可変にする */
+  margin-top: 120px;
+}
+/* 内側のテキスト */
+#philosophy .text-area .inner {
+  width: clamp(250px, 34vw, 350px);    /* 幅を可変にする */
+}
+#philosophy .text-area .inner .title {
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+#philosophy .text-area .inner .text {
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+/* 下の画像 */
+#philosophy .img-bottom {
+  max-width: 280px;
+  margin: -50px 0 0 10%;   /* テキストエリアに重なるように配置 */
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 90%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+/*-------------------------------------------
+ ビジネス紹介
+-------------------------------------------*/
+#service {
+  margin-bottom: 120px;
+  position: relative;
+}
+/* サービスアイテム */
+#service .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+#service .item.proj {
+  flex-direction: row-reverse;
+}
+#service .item .text {
+  width: 44%;
+  padding: 1% 5%;
+}
+#service .item .text .title-ja {
+  font-size: 25px;
+  font-weight : 500;
+  margin-bottom: 5px;
+}
+#service .item .text .title-en {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#service .item .text .description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+#service .item .text .view-more {
+  font-size: 14px;
+  text-align: right;
+  text-decoration: underline;
+}
+/* 画像を拡大させたときの処理 */
+#service .item .img {
+  width: 50%;          /* 幅を狭く設定                           */
+  overflow: hidden;    /* 拡大させたときにはみ出さないように設定 */
+  border-radius: 150px 50px 150px 0; /* 枠を斜めにカーブさせる   */
+  
+}
+
+/* マウスホーバーときの処理速度など */
+#service .item .img img {
+  transition: transform 0.8s ease;
+}
+/* マウスホーバーときに画像を1.1倍にする */
+#service .item:hover .img img {
+  transform: scale(1.1);
+}
+
+/* もっと読むの装飾 */
+#service .read-more ,#access .info a{
+  inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 3px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  max-width: fit-content; 
+}
+
+#service .read-more .text ,#access .info a{
+  margin-right: 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+#service .read-more .circle {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*-------------------------------------------
+  会社概要
+-------------------------------------------*/
+#overview {
+  margin-bottom: 120px;
+  position: relative;
+}
+
+#overview .overview-list {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(to right, #f9f6ff, #e0d4f0, #c2b0e0);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(120, 100, 160, 0.2); /* やわらかい紫系の影 */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+#overview .overview-list:hover {
+  box-shadow: 0 12px 28px rgba(120, 100, 160, 0.3); /* ホバー時にふわっと浮く */
+}
+#overview .overview-list dt,
+#overview .overview-list dd {
+  padding: 24px 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  border-bottom: 1px solid rgba(200, 200, 220, 0.4);
+}
+#overview .overview-list dt {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+  color: #444;
+}
+
+#overview .overview-list dd {
+  width: calc(100% - 200px);
+  background: rgba(255, 255, 255, 0.3);
+  color: #333;
+}
+
+#overview .overview-list dt:last-of-type,
+#overview .overview-list dd:last-of-type {
+  border-bottom: none;
+}
+
+/*-------------------------------------------
+Access
+-------------------------------------------*/
+#access {
+  margin-bottom: 120px;
+  position: relative;
+}
+#access .info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#access .map-and-cards {
+  display: flex;
+  gap: 20px;
+}
+
+#access .map {
+  width: 60%;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(200, 220, 255, 0.3);
+}
+
+#access .map-and-cards {
+  display: flex;
+  justify-content: center;                      /* 横方向の中央配置         * /
+  align-items: flex-start;                      /* 縦方向は上揃え           */
+  gap: 20px;
+  max-width: 1000px;                            /* レイアウトの幅を制限する */
+  margin: 0 auto;                               /* 中央配置の決め手         */
+  padding: 20px;
+}
+#access .side-cards {
+  width: 450px; /* infoBoxより少し広めに */
+  position: relative;
+}
+
+#access .card {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0faff, #e6f0ff);
+  box-shadow: 0 0 5px rgba(180, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+
+#infoBox {
+  position: absolute;
+  width: 200px; 
+  min-height: 100px;
+  top: 0;
+  color:  #fff;
+  padding: 20px 35px;
+  font-family: 'Yu Mincho', serif;
+  transition: opacity 0.6s ease;
+}
+#signBoard {
+  width: 250px;
+  height: 100%; 
+  left: 220px;
+  top: 0px;
+  position: absolute;
+  padding: 10px;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#signBoard img {
+  object-fit: cover; /* トリミング      */
+  width: 100%;
+  display: block;
+}
+#signBoard .caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+  font-family: 'Yu Mincho', serif;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+  min-height: 24px;
+}
+#access .message-board {
+  width: 200px;
+  height: 300px;
+  margin-top: 20px;
+  position: relative;
+}
+
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /* セクションタイトル */
+  .section-title {
+    margin-bottom: 10px;
+  }
+  .section-title::before {
+    content: none;
+  }
+
+  /*-------------------------------------------
+  メニュー
+  -------------------------------------------*/
+  
+  .pagelink-list {
+    margin-bottom: 40px;
+  }
+  .pagelink-list li {
+    font-size: 2px;
+  }
+
+
+
+  /*-------------------------------------------
+  Philosophy
+  -------------------------------------------*/
+  #philosophy {
+    margin-bottom: 60px;
+    position: static;
+  }
+  #philosophy .img-top {
+    width: 100%;
+    margin-bottom: 20px;
+    position: static;
+  }
+  #philosophy .text-area {
+    width: 100%;
+    padding: 20px;
+    margin: 0 0 20px;
+  }
+  #philosophy .text-area .inner {
+    width: 100%;
+  }
+  #philosophy .img-bottom {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /*-------------------------------------------
+  ビジネス紹介
+  -------------------------------------------*/
+  #service {
+    margin-bottom: 60px;
+  }
+  #service .item {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  #service .item.serv {
+    flex-direction: column;
+  }
+  #service .item.proj {
+     flex-direction: column;
+  }
+  #service .item .text {
+    width: 100%;
+    padding: 20px;
+  }
+  #service .item .text .title-en {
+    font-size: 26px;
+  }
+  #service .item .img {
+    width: 100%;
+  }
+  #service .item.proj .img,
+  #service .item.serv .img {
+    clip-path: none;
+  }
+  
+  /*-------------------------------------------
+  Overview
+  -------------------------------------------*/
+  #overview {
+    margin-bottom: 60px;
+  }
+  #overview .overview-list dt {
+    width: 100px;
+    padding: 20px 0;
+  }
+  #overview .overview-list dd {
+    width: calc(100% - 100px);
+    padding: 20px 0;
+  }
+
+  /*-------------------------------------------
+  Access
+  -------------------------------------------*/
+  #access {
+    width: 100%;
+    height: 400px;
+    position: relative;
+
+  }
+  
+  #access iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+  }
+  
+  #access  .map-and-cards {
+      align-items: center;
+      position: relative;
+      display: block;
+      flex-direction: column;
+  }
+  
+   #access .side-cards {
+      display: none;
+    }
+
+ 
+}
